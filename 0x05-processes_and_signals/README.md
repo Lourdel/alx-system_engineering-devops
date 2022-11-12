@@ -2,7 +2,7 @@
 
 Project done during **Full Stack Software Engineering studies** at **ALX_AFRICA**. 
 
-##Learning Objectives
+## Learning Objectives
 * learn about PID, processes and commands that handles them (`ps`, `pgrep`, `pkill`, `kill`, etc) in **Bash**.
 
 ## Technologies
