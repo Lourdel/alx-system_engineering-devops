@@ -2,6 +2,7 @@
 # Script that configures Nginx server with a custom header
 apt-get -y update
 apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 header="\t\tadd_header X-Served-By '$HOSTNAME';"
 sudo sed -i "32i\ $header" /etc/nginx/sites-enabled/default
 service nginx start
