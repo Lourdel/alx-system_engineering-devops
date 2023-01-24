@@ -34,9 +34,9 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
         option forwardfor
         option http-server-close
-listen 68534-lb-01
-        bind *:80
+frontend loadbalancer
         mode http
+        bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/lourdelk.tech.pem
         http-request redirect scheme https code 301 unless { ssl_fc }
         default_backend webservers
@@ -45,7 +45,6 @@ listen 68534-lb-01
         acl letsencrypt-acl path_beg /.well-known/acme-challenge/
         use_backend letsencrypt-backend if letsencrypt-acl
         default_backend webservers
-        stats enable
 backend webservers
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
