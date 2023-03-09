@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 # script to gracefuly reload gunicon
-sudo systemctl reload gunicorn.service
+ps auxf | pgrep gunicorn | head -n 1 | xargs kill -HUP
