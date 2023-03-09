@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# script to gracefuly reload gunicon
+sudo systemctl reload gunicorn.service
